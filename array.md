@@ -1,5 +1,27 @@
 
 (반복문, Array)
+두 정수 `start`, `end`를 입력받아, `start`부터 `end`까지의 모든 정수를 배열로 반환하는 함수를 작성하세요.
+
+예:
+```
+range(3, 6); -> [3, 4, 5, 6]
+```
+
+```js
+function range(start, end) {
+  const result = [];
+
+  for (let i = start; i <= end; i++) {
+    result.push(i);
+  }
+
+  return result;
+}
+```
+
+---
+
+(반복문, Array)
 수 타입의 값으로만 이루어진 배열을 입력받아, 그 값들의 합을 구하는 함수를 작성하세요.
 
 ```js
@@ -100,28 +122,6 @@ function addArray(arr1, arr2) {
 ---
 
 (반복문, Array)
-두 정수 `start`, `end`를 입력받아, `start`부터 `end`까지의 모든 정수를 배열로 반환하는 함수를 작성하세요.
-
-예:
-```
-range(3, 6); -> [3, 4, 5, 6]
-```
-
-```js
-function range(start, end) {
-  const result = [];
-
-  for (let i = start; i <= end; i++) {
-    result.push(i);
-  }
-
-  return result;
-}
-```
-
----
-
-(반복문, Array)
 배열을 입력받아, 배열의 요소 중 두 개를 선택하는 조합을 모두 포함하는 배열을 작성하세요.
 
 예:
@@ -189,5 +189,3 @@ function selectionSort(arr) {
   return arr;
 }
 ```
-
----

@@ -467,5 +467,3 @@ function insertHyphen(s) {
   return sum;
 }
 ```
-
----

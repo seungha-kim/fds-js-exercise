@@ -36,7 +36,44 @@ function isPositive(x, y, z) {
 
 ---
 
-(반복문)
+(조건문, 연산자)
+세 수 `min`, `max`, `input`을 입력받아, 다음과 같이 동작하는 함수를 작성하세요.
+- `min`보다 `input`이 작으면, `min`을 반환합니다.
+- `max`보다 `input`이 크면, `max`를 반환합니다.
+- 아니면 `input`을 반환합니다.
+
+예:
+```
+limit(3, 7, 5); -> 5
+limit(3, 7, 11); -> 7
+limit(3, 7, 0); -> 0
+```
+
+```js
+function limit(min, max, input) {
+  if (min > input) {
+    return min;
+  } else if (max < input) {
+    return max;
+  } else {
+    return input;
+  }
+}
+```
+
+```js
+function limit(min, max, input) {
+  return (
+    min > input ? min :
+    max < input ? max :
+    input
+  );
+}
+```
+
+---
+
+(조건문, 반복문)
 어떤 정수가 짝수인지 홀수인지 출력하는 함수를 작성하세요. 이를 이용해서, 1부터 20까지의 수가 각각 짝수인지 홀수인지 출력하는 프로그램을 작성하세요.
 
 ```js
@@ -50,6 +87,50 @@ function printEvenOdd(x) {
 
 for (let i = 1; i <= 20; i++) {
   printEvenOdd(i);
+}
+```
+
+---
+
+(반복문)
+100 이하의 자연수 중 3과 5의 공배수를 모두 출력하는 프로그램을 작성하세요.
+
+```js
+for (let i = 1; i <= 100; i++) {
+  if (i % 3 === 0 || i % 5 === 0) {
+    console.log(i);
+  }
+}
+```
+
+---
+
+(반복문)
+자연수를 입력받아, 그 수의 모든 약수를 출력하는 함수를 작성하세요.
+
+```js
+function printFactors(n) {
+  for (let i = 1; i <= n; i++) {
+    if (n % i === 0) {
+      console.log(i);
+    }
+  }
+}
+```
+
+---
+
+(반복문)
+2 이상의 자연수를 입력받아, 그 수가 소수인지 아닌지를 판별하는 함수를 작성하세요.
+
+```js
+function isPrime(n) {
+  for (let i = 2; i < n; i++) {
+    if (n % 2 === 0) {
+      return false;
+    }
+  }
+  return true;
 }
 ```
 
@@ -218,19 +299,6 @@ function gcd(x, y) {
 
 ---
 
-(반복문)
-100 이하의 자연수 중 3과 5의 공배수를 모두 출력하는 프로그램을 작성하세요.
-
-```js
-for (let i = 1; i <= 100; i++) {
-  if (i % 3 === 0 || i % 5 === 0) {
-    console.log(i);
-  }
-}
-```
-
----
-
 (연산자, 조건문, 알고리즘)
 세 수를 입력받아 큰 것부터 차례대로 출력하는 함수를 작성하세요.
 
@@ -277,74 +345,6 @@ function printLargerFirst(...args) {
 ---
 
 (반복문)
-자연수를 입력받아, 그 수의 모든 약수를 출력하는 함수를 작성하세요.
-
-```js
-function printFactors(n) {
-  for (let i = 1; i <= n; i++) {
-    if (n % i === 0) {
-      console.log(i);
-    }
-  }
-}
-```
-
----
-
-(반복문)
-2 이상의 자연수를 입력받아, 그 수가 소수인지 아닌지를 판별하는 함수를 작성하세요.
-
-```js
-function isPrime(n) {
-  for (let i = 2; i < n; i++) {
-    if (n % 2 === 0) {
-      return false;
-    }
-  }
-  return true;
-}
-```
-
----
-
-(조건문, 연산자)
-세 수 `min`, `max`, `input`을 입력받아, 다음과 같이 동작하는 함수를 작성하세요.
-- `min`보다 `input`이 작으면, `min`을 반환합니다.
-- `max`보다 `input`이 크면, `max`를 반환합니다.
-- 아니면 `input`을 반환합니다.
-
-예:
-```
-limit(3, 7, 5); -> 5
-limit(3, 7, 11); -> 7
-limit(3, 7, 0); -> 0
-```
-
-```js
-function limit(min, max, input) {
-  if (min > input) {
-    return min;
-  } else if (max < input) {
-    return max;
-  } else {
-    return input;
-  }
-}
-```
-
-```js
-function limit(min, max, input) {
-  return (
-    min > input ? min :
-    max < input ? max :
-    input
-  );
-}
-```
-
----
-
-(반복문)
 자연수 `n`을 입력받아, `n`번째 피보나치 수를 반환하는 함수를 작성하세요.
 
 ```js
@@ -370,5 +370,3 @@ function fibonacci(n) {
   return x;
 }
 ```
-
----
