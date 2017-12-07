@@ -7,13 +7,52 @@
 range(3, 6); -> [3, 4, 5, 6]
 ```
 
+```js
+
+function range(start, end) {
+  const arr = [];
+  for (let i = start; i <= end; i++) {
+    arr.push(i);
+  }
+  return arr;
+}
+```
+
 ### 문제 2
 
 수 타입의 값으로만 이루어진 배열을 입력받아, 그 값들의 합을 구하는 함수를 작성하세요.
 
+```js
+// 수 타입의 값으로만 이루어진 배열을 입력받아, 그 값들의 합을 구하는 함수를 작성하세요.
+
+function sum(arr) {
+  let sum = 0;
+  
+  for (let item of arr) {
+    sum += item;
+  }
+  
+  console.log(sum);
+}
+```
+
 ### 문제 3
 
 배열을 입력받아, falsy인 요소가 제거된 새 배열을 반환하는 함수를 작성하세요.
+
+```js
+// 배열을 입력받아, falsy인 요소가 제거된 새 배열을 반환하는 함수를 작성하세요.
+
+function filter(arr) {
+  const newArr = [];
+  for (let item of arr) {
+    if (item) {
+      newArr.push(item);
+    }
+  }
+  return newArr;
+}
+```
 
 ### 문제 4
 
