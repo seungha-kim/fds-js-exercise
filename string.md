@@ -26,20 +26,13 @@ leftPad('hello', 3); -> 'hello'
 ```
 
 ```js
-
-function countChar(str) {
-  const obj = {};
-  for (let c of str) {
-    if (obj[c] === undefined) {
-      obj[c] = 1;
-    } else {
-      obj[c]++;
-    }
+function leftPad(s, n) {
+  if (s.length < n) {
+    return ' '.repeat(n - s.length) + s;
+  } else {
+    return s;
   }
-  return obj;
 }
-
-countChar('hello');
 ```
 
 ### 문제 3
