@@ -9,6 +9,12 @@ insensitiveEqual('hello', 'Hello'); -> true
 insensitiveEqual('hello', 'world'); -> false
 ```
 
+```js
+function insensitiveCompare(str1, str2) {
+  return str1.toLowerCase() === str2.toLowerCase();
+}
+```
+
 ### 문제 2
 
 문자열 `s`와 자연수 `n`을 입력받아, 만약 `s`의 길이가 `n`보다 작으면 `s`의 왼쪽에 공백으로 추가해서 길이가 `n`이 되게 만든 후 반환하고, 아니면 `s`를 그대로 반환하는 함수를 작성해보세요.
@@ -17,6 +23,23 @@ insensitiveEqual('hello', 'world'); -> false
 ```
 leftPad('hello', 8); -> '   hello'
 leftPad('hello', 3); -> 'hello'
+```
+
+```js
+
+function countChar(str) {
+  const obj = {};
+  for (let c of str) {
+    if (obj[c] === undefined) {
+      obj[c] = 1;
+    } else {
+      obj[c]++;
+    }
+  }
+  return obj;
+}
+
+countChar('hello');
 ```
 
 ### 문제 3
