@@ -46,6 +46,18 @@ countChar('hello');
 
 문자열을 입력받아, 문자열 안에 들어있는 모든 모음(a, e, i, o, u)의 갯수를 반환하는 함수를 작성하세요.
 
+```js
+function countVowel(str) {
+  let count = 0;
+  for (let c of str) {
+    if (['a', 'e', 'i', 'o', 'u'].includes(c)) {
+      count++;
+    }
+  }
+  return count;
+}
+```
+
 ### 문제 4
 
 문자열을 입력받아, 해당 문자열에 포함된 문자의 종류와 갯수를 나타내는 객체를 반환하는 함수를 작성하세요.
@@ -53,6 +65,22 @@ countChar('hello');
 예:
 ```
 countChar('tomato'); -> {t: 2, o: 2, m: 1, a: 1}
+```
+
+```js
+function countChar(str) {
+  const obj = {};
+  for (let c of str) {
+    if (obj[c] === undefined) {
+      obj[c] = 1;
+    } else {
+      obj[c]++;
+    }
+  }
+  return obj;
+}
+
+countChar('hello');
 ```
 
 ### 문제 5

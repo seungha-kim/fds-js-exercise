@@ -144,20 +144,18 @@ coins(263, [100, 50, 10, 5, 1]);
 // 배열을 입력받아, 배열의 요소 중 두 개를 선택하는 조합을 모두 포함하는 배열을 작성하세요.
 // combination([1, 2, 3]); -> [[1, 2], [1, 3], [2, 3]]
 
-
 function coins(amount, coinTypes) {
   let currentAmount = amount;
   for (let ct of coinTypes) {
     // 정수 나눗셈 방법
     const result = Math.floor(currentAmount / ct);
-    
+
     // 코인타입을 result 만큼 출력
-    // ...
     for (let i = 0; i < result; i++) {
       console.log(ct)
     }
+
     // 빼기
-    // ...
     currentAmount -= result * ct;
   }
 }
