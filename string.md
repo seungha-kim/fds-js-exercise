@@ -172,13 +172,78 @@ function removeDuplicates(str) {
 - 루프로 먼저 풀어보세요.
 - `split` 메소드를 이용해서 풀어보세요.
 
+```js
+
+// 루프
+function hideId(email) {
+  let numOfId = 0;
+  let atAppeared = false;
+  let domain = '';
+  for (let c of email) {
+    if (c === '@') {
+      atAppeared = true;
+    } else if (!atAppeared) {
+      numOfId++;
+    } else {
+      domain += c;
+    }
+  }
+  
+  let result = '';
+  for (let i = 0; i < numOfId; i++) {
+    result += '*';
+  }
+  result += '@';
+  result += domain;
+  return result;
+}
+
+// split, repeat
+function hideId2(email) {
+  const [id, domain] = email.split('@');
+  return '*'.repeat(id.length) + '@' + domain;
+}
+```
+
 ### 문제 9
 
 문자열을 입력받아, 대문자는 소문자로, 소문자는 대문자로 바꾼 결과를 반환하는 함수를 작성하세요.
 
+```js
+// 문자열을 입력받아, 대문자는 소문자로, 소문자는 대문자로 바꾼 결과를 반환하는 함수를 작성하세요.
+
+function changeCase(str) {
+  let newStr = '';
+  for (let c of str) {
+    if (c.toLowerCase() === c) {
+      newStr += c.toUpperCase();
+    } else {
+      newStr += c.toLowerCase();
+    }
+  }
+  return newStr;
+}
+```
+
 ### 문제 10
 
 문자열을 입력받아, 각 단어의 첫 글자를 대문자로 바꾼 결과를 반환하는 함수를 작성하세요. (문자열에 개행이 없다고 가정합니다.)
+
+```js
+// 문자열을 입력받아, 각 단어의 첫 글자를 대문자로 바꾼 결과를 반환하는 함수를 작성하세요. (문자열에 개행이 없다고 가정합니다.)
+
+function capitalize(str) {
+  let newStr = '';
+  for (let i = 0; i < str.length; i++) {
+    if (str[i - 1] === ' ' || i === 0) {
+      newStr += str[i].toUpperCase();
+    } else {
+      newStr += str[i];
+    }
+  }
+  return newStr;
+}
+```
 
 ### 문제 11
 
@@ -188,13 +253,21 @@ function removeDuplicates(str) {
 
 문자열 `s`과 자연수 `n`을 입력받아, `s`의 첫 `n`개의 문자만으로 이루어진 새 문자열을 반환하는 함수를 작성하세요.
 
+```js
+function firstChars(s, n) {
+    // ...
+}
+
+firstChars('hello', 3); // 'hel'
+```
+
 ### 문제 13
 
-Camel case의 문자열을 입력받아, snake case로 바꾸어주는 함수를 작성하세요.
+Camel case의 문자열을 입력받아, snake case로 바꾼 새 문자열을 반환하는 함수를 작성하세요.
 
 ### 문제 14
 
-Snake case의 문자열을 입력받아, camel case로 바꾸어주는 함수를 작성하세요.
+Snake case의 문자열을 입력받아, camel case로 바꾼 새 문자열을 반환하는 함수를 작성하세요.
 
 ### 문제 15
 
