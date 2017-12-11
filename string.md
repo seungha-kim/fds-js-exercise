@@ -80,6 +80,35 @@ countChar('hello');
 
 문자열을 입력받아 그 문자열이 회문(palindrome)인지 판별하는 함수를 작성하세요. (회문이란, '토마토', 'never odd or even'과 같이 뒤에서부터 읽어도 똑같이 읽히는 문자열을 말합니다.)
 
+```js
+function isPalindrome(str) {
+  for (let i = 0; i < Math.floor(str.length / 2); i++) {
+    if (str[i] !== str[str.length - 1 - i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function isPalindrome2(str) {
+  const arr1 = Array.from(str);
+  const arr2 = Array.from(str).reverse();
+  console.log(arr1);
+  console.log(arr2);
+  for (let i = 0; i < Math.floor(arr1.length / 2); i++) {
+    if (arr1[i] !== arr2[i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function isPalindrome3(str) {
+  const spaceRemoved = str.replace(/\s/g, '').toLowerCase();
+  return spaceRemoved === Array.from(spaceRemoved).reverse().join('');
+}
+```
+
 ### 문제 6
 
 문자열을 입력받아, 그 문자열의 모든 '부분 문자열'로 이루어진 배열을 반환하는 함수를 작성하세요.
@@ -88,6 +117,29 @@ countChar('hello');
 ```
 subString('햄버거');
 // 결과: ['햄', '햄버', '햄버거', '버', '버거', '거']
+```
+
+```js
+// 문자열을 입력받아, 그 문자열의 모든 '부분 문자열'로 이루어진 배열을 반환하는 함수를 작성하세요.
+// subString('햄버거');
+// 결과: ['햄', '햄버', '햄버거', '버', '버거', '거']
+
+// i j
+// 0 1
+// 0 2
+// 0 3
+// 1 2
+// 1 3
+// 2 3
+function subString(str) {
+  const arr = [];
+  for (let i = 0; i < str.length; i++) {
+    for (let j = i + 1; j <= str.length; j++) {
+      arr.push(str.slice(i, j));
+    }
+  }
+  return arr;
+}
 ```
 
 ### 문제 7
@@ -99,9 +151,26 @@ subString('햄버거');
 removeDuplicates('tomato'); -> 'toma'
 removeDuplicates('bartender'); -> 'bartend'
 ```
+
+```js
+function removeDuplicates(str) {
+  let newStr = '';
+  for (let c of str) { // character
+    if (!newStr.includes(c)) {
+      newStr += c;
+    }
+  }
+  return newStr;
+}
+
+```
+
 ### 문제 8
 
 이메일 주소를 입력받아, 아이디 부분을 별표(`*`)로 가린 새 문자열을 반환하는 함수를 작성하세요.
+
+- 루프로 먼저 풀어보세요.
+- `split` 메소드를 이용해서 풀어보세요.
 
 ### 문제 9
 
