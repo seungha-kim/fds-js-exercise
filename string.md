@@ -249,6 +249,21 @@ function capitalize(str) {
 
 문자열을 입력받아, 문자열 안에 들어있는 단어 중 가장 긴 단어를 반환하는 함수를 작성하세요. (문자열에 개행이 없다고 가정합니다.)
 
+```js
+// 문자열을 입력받아, 문자열 안에 들어있는 단어 중 가장 긴 단어를 반환하는 함수를 작성하세요. (문자열에 개행이 없다고 가정합니다.)
+
+function longestWord(str) {
+  const arr = str.split(' ');
+  let longest = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i].length > longest.length) {
+      longest = arr[i];
+    }
+  }
+  return longest;
+}
+```
+
 ### 문제 12
 
 문자열 `s`과 자연수 `n`을 입력받아, `s`의 첫 `n`개의 문자만으로 이루어진 새 문자열을 반환하는 함수를 작성하세요.
@@ -259,6 +274,18 @@ function firstChars(s, n) {
 }
 
 firstChars('hello', 3); // 'hel'
+```
+
+```js
+// 문자열 `s`과 자연수 `n`을 입력받아, `s`의 첫 `n`개의 문자만으로 이루어진 새 문자열을 반환하는 함수를 작성하세요.
+
+function firstChars(s, n) {
+  let newStr = '';
+  for (let i = 0; i < n && i < s.length; i++) {
+    newStr += s[i];
+  }
+  return newStr;
+}
 ```
 
 ### 문제 13

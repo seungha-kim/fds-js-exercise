@@ -24,9 +24,45 @@ ceilBy5(37); -> 40
 
 임의의 HTML 색상 코드를 반환하는 함수를 작성하세요.
 
+```js
+// 임의의 HTML 색상 코드를 반환하는 함수를 작성하세요.
+
+function randomHtmlColor() {
+  const availableChars = '0123456789abcdef';
+  let newStr = '#';
+  
+  for (let i = 0; i < 6; i++) {
+    newStr += availableChars[Math.floor(Math.random() * 16)];
+  }
+  
+  return newStr;
+}
+
+function randomHtmlColor2() {
+  const value = Math.random() * 256 * 256 * 256;
+  return '#' + Math.floor(value).toString(16);
+  // 버그!
+}
+```
+
 ### 문제 6
 
 양수를 입력받아, 그 수만큼의 길이를 갖는 임의의 문자열을 반환하는 함수를 작성하세요.
+
+```js
+// 양수를 입력받아, 그 수만큼의 길이를 갖는 임의의 문자열을 반환하는 함수를 작성하세요.
+
+const str = '0123456789abcdefABCDEF!@#$%^&*()';
+
+function randomString(n) {
+  let newStr = '';
+  for (let i = 0; i < n; i++) {
+    const randomIndex = Math.floor(Math.random() * str.length);
+    newStr += str[randomIndex];
+  }
+  return newStr;
+}
+```
 
 ### 문제 7
 
