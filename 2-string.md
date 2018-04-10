@@ -9,6 +9,22 @@ insensitiveEqual('hello', 'Hello'); -> true
 insensitiveEqual('hello', 'world'); -> false
 ```
 
+```js
+
+function insensitiveEqual(str1, str2) {
+  if (str1.toLowerCase() === str2.toLowerCase()) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function insensitiveEqual(str1, str2) {
+  return str1.toLowerCase() === str2.toLowerCase();  
+}
+
+```
+
 ### 문제 2
 
 문자열 `s`와 자연수 `n`을 입력받아, 만약 `s`의 길이가 `n`보다 작으면 `s`의 왼쪽에 공백으로 추가해서 길이가 `n`이 되게 만든 후 반환하고, 아니면 `s`를 그대로 반환하는 함수를 작성해보세요.
@@ -19,9 +35,52 @@ leftPad('hello', 8); -> '   hello'
 leftPad('hello', 3); -> 'hello'
 ```
 
+```js
+function leftPad(str, num) {
+  if (str.length < num) {
+    // 공백 추가 후 반환
+    const spaceLength = num - str.length;
+    return ' '.repeat(spaceLength) + str;
+    // 과제: for 루프 써서 해보기!
+  } else {
+    return str;
+  }
+}
+```
+
 ### 문제 3
 
 문자열을 입력받아, 문자열 안에 들어있는 모든 모음(a, e, i, o, u)의 갯수를 반환하는 함수를 작성하세요.
+
+```js
+function countVowel(str) {
+  let count = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (
+      str[i].includes('a') || 
+      str[i].includes('e') || 
+      str[i].includes('i') || 
+      str[i].includes('o') || 
+      str[i].includes('u')
+    ) {
+      count++;
+    }
+  }
+  return count;
+}
+```
+
+```js
+function countVowel(str) {
+  let count = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i].includes('a') || str[i].includes('e') || str[i].includes('i') || str[i].includes('o') || str[i].includes('u')) {
+      count++;
+    }
+  }
+  return count;
+}
+```
 
 ### 문제 4
 
@@ -30,6 +89,47 @@ leftPad('hello', 3); -> 'hello'
 예:
 ```
 countChar('tomato'); -> {t: 2, o: 2, m: 1, a: 1}
+```
+
+```js
+// ### 문제 4
+
+// 문자열을 입력받아, 해당 문자열에 포함된 문자의 종류와 갯수를 나타내는 객체를 반환하는 함수를 작성하세요.
+
+// 예:
+// ```
+// countChar('tomato'); -> {t: 2, o: 2, m: 1, a: 1}
+// ```
+
+function countChar(str) {
+  const obj = {};
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    // 만약 속성이 없다면
+    if (obj[char] == null) { // null check
+      // 속성 값에 1 저장
+      obj[char] = 1;
+    } else {
+      // 속성이 있으면 1 증가
+      obj[char]++;
+    }
+  }
+  return obj;
+}
+
+// 식별자 이름이 아닌 속성 이름을 사용할 때에는 반드시 대문자 표기법을 사용해야 한다.
+// 변수에 대입되어 있는 문자열과 같은 이름의 속성을 가져올 때도 반드시 대문자 표기법을 사용해야 한다.
+
+// > const obj = {a: 1, b: 2}
+// => undefined
+// > obj.a
+// => 1
+// > obj['a']
+// => 1
+// > const propName = 'a'
+// => undefined
+// > obj[propName]
+// => 1
 ```
 
 ### 문제 5
