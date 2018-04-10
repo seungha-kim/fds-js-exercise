@@ -288,6 +288,7 @@ function diamond(n) {
 세 수를 입력받아 큰 것부터 차례대로 출력하는 함수를 작성하세요.
 
 ```js
+// 선택 정렬
 function sort(x, y, z) {
   // 셋 중에 제일 큰 놈을 따로 빼기
   let larger = x > y ? x : y;
@@ -306,6 +307,7 @@ function sort(x, y, z) {
 ```
 
 ```js
+// 선택 정렬
 function sort(x, y, z) {
   // 셋 중에 제일 큰 놈을 따로 빼기
   let larger = x > y ? x : y;
@@ -317,6 +319,30 @@ function sort(x, y, z) {
   console.log(max);
   console.log(mid);
   console.log(min);
+}
+```
+
+```js
+// 버블 정렬
+function sort(x, y, z) {
+  if (x > y) {
+    const temp = x;
+    x = y;
+    y = temp;
+  }
+  if (y > z) {
+    const temp = y;
+    y = z;
+    z = temp;
+  }
+  if (x > y) {
+    const temp = x;
+    x = y;
+    y = temp;
+  }
+  console.log(z);
+  console.log(y);
+  console.log(x);
 }
 ```
 
