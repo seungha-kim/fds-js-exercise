@@ -263,6 +263,22 @@ function stair(n) {
     *
 ```
 
+```js
+function line(n, i) {
+  const str = ' '.repeat(n - i - 1) + '* '.repeat(i + 1);
+    console.log(str);
+}
+
+function diamond(n) {
+  for (let i = 0; i < n; i++) {
+    line(n, i);
+  }
+  for (let i = 0; i < n - 1 ; i++) {
+    line(n, n - i - 2);
+  }
+}
+```
+
 ### 문제 11
 
 두 수를 입력받아서, 두 수의 최대공약수를 반환하는 함수를 작성하세요. ([유클리드 호제법](https://ko.wikipedia.org/wiki/%EC%9C%A0%ED%81%B4%EB%A6%AC%EB%93%9C_%ED%98%B8%EC%A0%9C%EB%B2%95)을 참고하세요.)
@@ -270,6 +286,39 @@ function stair(n) {
 ### 문제 12
 
 세 수를 입력받아 큰 것부터 차례대로 출력하는 함수를 작성하세요.
+
+```js
+function sort(x, y, z) {
+  // 셋 중에 제일 큰 놈을 따로 빼기
+  let larger = x > y ? x : y;
+  let smaller1 = x > y ? y : x;
+  let max = larger > z ? larger : z;
+  let smaller2 = larger > z ? z : larger;
+  console.log(max);
+  if (smaller1 > smaller2) {
+    console.log(smaller1);
+    console.log(smaller2);
+  } else {
+    console.log(smaller2);
+    console.log(smaller1);
+  }
+}
+```
+
+```js
+function sort(x, y, z) {
+  // 셋 중에 제일 큰 놈을 따로 빼기
+  let larger = x > y ? x : y;
+  let smaller1 = x > y ? y : x;
+  let max = larger > z ? larger : z;
+  let smaller2 = larger > z ? z : larger;
+  let min = smaller1 > smaller2 ? smaller2 : smaller1;
+  let mid = smaller1 > smaller2 ? smaller1 : smaller2;
+  console.log(max);
+  console.log(mid);
+  console.log(min);
+}
+```
 
 ### 문제 13
 
