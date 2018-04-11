@@ -270,9 +270,55 @@ function swapCase(str) {
 
 문자열을 입력받아, 각 단어의 첫 글자를 대문자로 바꾼 결과를 반환하는 함수를 작성하세요. (문자열에 개행이 없다고 가정합니다.)
 
+```js
+function capitalize(str) {
+  let newStr = '';
+  for (let i = 0; i < str.length; i++) {
+    // 맨 처음 문자라서
+    // 혹은 바로 앞이 공백 문자라서
+    if (i === 0 || str[i - 1] === ' ') {
+      newStr += str[i].toUpperCase();
+    } else {
+      newStr += str[i];
+    }
+  }
+  return newStr;
+}
+
+```
+
 ### 문제 11
 
 문자열을 입력받아, 문자열 안에 들어있는 단어 중 가장 긴 단어를 반환하는 함수를 작성하세요. (문자열에 개행이 없다고 가정합니다.)
+
+### 문제 11 (수정)
+
+문자열을 입력받아, 문자열 안에 들어있는 단어 중 가장 긴 단어의 길이를 반환하는 함수를 작성하세요. (문자열에 개행이 없다고 가정합니다.)
+
+```js
+function maxWordLen(str) {
+  let maxLen = 0;
+  let curLen = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === ' ') {
+      maxLen = maxLen > curLen ? maxLen : curLen;
+      curLen = 0;
+    } else {
+      curLen++;
+    }
+  }
+  return maxLen > curLen ? maxLen : curLen;
+}
+
+function maxWordLen(str) {
+  const words = str.split(' ');
+  let maxLen = 0;
+  for (let i = 0; i < words.length; i++) {
+    maxLen = maxLen > words[i].length ? maxLen : words[i].length;
+  }
+  return maxLen;
+}
+```
 
 ### 문제 12
 
