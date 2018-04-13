@@ -7,9 +7,62 @@
 range(3, 6); -> [3, 4, 5, 6]
 ```
 
+```js
+function range(start, end) {
+  const arr = [];
+  for (let i = start; i <= end; i++) {
+    arr.push(i);
+  }
+  return arr;
+}
+
+function range2(start, end) {
+  return new Array(end - start + 1)
+    .fill(start)
+    .map((item, index) => item + index);
+}
+```
+
 ### 문제 2
 
 수 타입의 값으로만 이루어진 배열을 입력받아, 그 값들의 합을 구하는 함수를 작성하세요.
+
+```js
+// ### 문제 2
+
+// 수 타입의 값으로만 이루어진 배열을 입력받아, 그 값들의 합을 구하는 함수를 작성하세요.
+
+function sum(arr) {
+  let num = 0;
+  for (let i = 0; i < arr.length; i++) {
+    num += arr[i]; // num = num + arr[i];
+  }
+  return num;
+}
+
+function sum(arr) {
+  let num = 0;
+  arr.forEach(item => {
+    num += item; // num = num + item;
+  });
+  return num;
+}
+
+function sum(arr) {
+  let num = 0;
+  for (const item of arr) {
+    num += item;
+  }
+  return num;
+}
+
+function sum(arr) {
+  return arr.reduce((acc, item) => acc + item, 0);
+}
+
+// sum([1, 2, 3]); -> 6
+// sum([0, 1, 2, 3, 4]); -> 10
+```
 
 ### 문제 3
 
